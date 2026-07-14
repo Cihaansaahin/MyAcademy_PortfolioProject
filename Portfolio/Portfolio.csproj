@@ -12,6 +12,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="NuGet.Versioning" Version="7.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\AdminTemplate\" />
   </ItemGroup>
 
 </Project>
