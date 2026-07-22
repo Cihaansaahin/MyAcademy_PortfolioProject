@@ -1,0 +1,27 @@
+﻿@model List<ProjectTechStack>
+@{
+    ViewData["Title"] = "Proje teknolojileri  ";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Proje Adı</th>
+        <th>Kullanılan Teknolojiler</th>
+    </tr>
+    @foreach (var group in Model.GroupBy(x=> x.ProjectId))
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@group.First().Project.Name</td>
+            <td>
+               @string.Join(", ", group.Select(x => x.TechStack.Name))
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a class="btn btn-outline-dark" href="/ProjectTechStacks/Create">Yeni Giriş </a>
