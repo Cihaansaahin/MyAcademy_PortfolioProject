@@ -1,0 +1,67 @@
+﻿@model List<Experience>  
+
+@{
+    ViewData["Title"] = "Deneyimlerim";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="p-lg">
+    <!-- Sayfa Başlığı ve Ekle Butonu -->
+    <div class="flex justify-between items-center mb-lg">
+        <div>
+            <h1 class="text-h2 font-bold text-on-surface">Deneyimlerim</h1>
+            <p class="text-on-surface-variant font-label-md">Kariyer geçmişinizi ve tecrübelerinizi bu alandan yönetebilirsiniz.</p>
+        </div>
+        <a href="/Experience/Create" class="btn btn-primary px-md py-sm rounded-md bg-primary text-on-primary hover:opacity-90 font-semibold">
+            + Yeni Deneyim Ekle
+        </a>
+    </div>
+
+    <!-- Tablo Kutusu -->
+    <div class="bg-surface-container-low rounded-lg border border-outline-variant overflow-hidden">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-surface-container-highest border-b border-outline-variant text-on-surface-variant font-label-md">
+                    <th class="p-md">#</th>
+                    <th class="p-md">Pozisyon / Unvan</th>
+                    <th class="p-md">Şirket</th>
+                    <th class="p-md">Çalışma Dönemi</th>
+                    <th class="p-md">Açıklama</th>
+                    <th class="p-md text-right">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    int count = 0;
+                    foreach (var item in Model)
+                    {
+                        count++;
+                        <tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+                            <td class="p-md font-semibold text-on-surface">@count</td>
+                            <td class="p-md font-semibold text-on-surface">@item.Title</td>
+                            <td class="p-md text-on-surface-variant">@item.Company</td>
+                            <td class="p-md text-on-surface-variant">
+                                <span class="px-2 py-1 rounded bg-surface-container-high text-xs font-medium">
+                                    @item.StartYear - @item.EndYear
+                                </span>
+                            </td>
+                            <td class="p-md text-on-surface-variant max-w-xs truncate">@item.Description</td>
+                            <td class="p-md text-right">
+                                <a href="/Experience/Update/@item.Id" class="text-primary font-semibold hover:underline me-md">Düzenle</a>
+                                <a href="/Experience/Delete/@item.Id" class="text-error font-semibold hover:underline" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?');">Sil</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="p-md text-center text-on-surface-variant">
+                            Henüz eklenmiş bir deneyim kaydı bulunmuyor.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

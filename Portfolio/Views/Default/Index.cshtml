@@ -441,23 +441,7 @@
         <section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter relative bg-surface-container-lowest" id="contact">
             <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
                 @await Component.InvokeAsync("_DefaultContactInfo")
-                <div class="glass-card p-stack-lg rounded-xl">
-                    <form class="flex flex-col gap-stack-md">
-                        <div>
-                            <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="name">Name</label>
-                            <input class="w-full bg-surface-variant/50 border border-outline-variant rounded-md px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="name" placeholder="John Doe" type="text" />
-                        </div>
-                        <div>
-                            <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="email">Email</label>
-                            <input class="w-full bg-surface-variant/50 border border-outline-variant rounded-md px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="email" placeholder="john@example.com" type="email" />
-                        </div>
-                        <div>
-                            <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="message">Message</label>
-                            <textarea class="w-full bg-surface-variant/50 border border-outline-variant rounded-md px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all min-h-[150px]" id="message" placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button class="w-full px-8 py-4 bg-primary text-on-primary rounded-DEFAULT font-label-sm text-label-sm hover:opacity-90 transition-opacity mt-2" type="submit">Send Message</button>
-                    </form>
-                </div>
+                @await Component.InvokeAsync("_DefaultUserMessage")
             </div>
         </section>
         <!-- Footer -->
@@ -499,4 +483,5 @@
         }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body></html>

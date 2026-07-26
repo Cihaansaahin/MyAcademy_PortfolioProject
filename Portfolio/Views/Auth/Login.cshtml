@@ -1,0 +1,220 @@
+﻿@model LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giriş Yap - Admin Paneli</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+                overflow: hidden;
+                position: relative;
+            }
+
+            .glow-1 {
+                position: absolute;
+                width: 320px;
+                height: 320px;
+                background: #4f46e5;
+                top: 15%;
+                left: 20%;
+                border-radius: 50%;
+                filter: blur(90px);
+                opacity: 0.35;
+            }
+
+            .glow-2 {
+                position: absolute;
+                width: 350px;
+                height: 350px;
+                background: #9333ea;
+                bottom: 15%;
+                right: 20%;
+                border-radius: 50%;
+                filter: blur(90px);
+                opacity: 0.35;
+            }
+
+            .login-card {
+                position: relative;
+                z-index: 10;
+                width: 100%;
+                max-width: 420px;
+                padding: 40px 35px;
+                background: rgba(255, 255, 255, 0.04);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+                color: #ffffff;
+            }
+
+            .login-header {
+                text-align: center;
+                margin-bottom: 28px;
+            }
+
+                .login-header h4 {
+                    font-size: 26px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    margin-bottom: 6px;
+                }
+
+                .login-header p {
+                    font-size: 13px;
+                    color: #94a3b8;
+                }
+
+            .form-group {
+                position: relative;
+                margin-bottom: 20px;
+            }
+
+                .form-group label {
+                    display: block;
+                    font-size: 13px;
+                    color: #cbd5e1;
+                    margin-bottom: 8px;
+                    font-weight: 500;
+                }
+
+            .input-wrapper {
+                position: relative;
+            }
+
+                .input-wrapper i {
+                    position: absolute;
+                    left: 14px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #64748b;
+                    font-size: 16px;
+                    transition: color 0.3s ease;
+                }
+
+            .form-control-custom {
+                width: 100%;
+                padding: 12px 14px 12px 42px;
+                background: rgba(15, 23, 42, 0.7);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 10px;
+                color: #ffffff;
+                font-size: 14px;
+                outline: none;
+                transition: all 0.3s ease;
+            }
+
+                .form-control-custom:focus {
+                    border-color: #6366f1;
+                    box-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
+                }
+
+                    .form-control-custom:focus + i {
+                        color: #6366f1;
+                    }
+
+            .text-danger {
+                color: #fca5a5 !important;
+                font-size: 12px;
+                margin-top: 5px;
+                display: block;
+            }
+
+            .validation-summary {
+                background: rgba(239, 68, 68, 0.15);
+                border: 1px solid rgba(239, 68, 68, 0.3);
+                border-radius: 8px;
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+
+            .btn-login {
+                width: 100%;
+                padding: 13px;
+                background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+                border: none;
+                border-radius: 10px;
+                color: #ffffff;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 10px;
+                box-shadow: 0 10px 20px -10px rgba(99, 102, 241, 0.5);
+            }
+
+                .btn-login:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 15px 25px -10px rgba(99, 102, 241, 0.7);
+                    opacity: 0.95;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="login-card">
+        <div class="login-header">
+            <h4>Giriş Formu</h4>
+            <p>Lütfen bilgilerinizi giriniz</p>
+        </div>
+
+        <form method="post">
+            @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey(""))
+            {
+                <div class="validation-summary">
+                    <span class="text-danger">@Html.ValidationSummary(excludePropertyErrors: true)</span>
+                </div>
+            }
+
+            <div class="form-group">
+                <label>Kullanıcı Adı</label>
+                <div class="input-wrapper">
+                    <input type="text" asp-for="UserName" class="form-control-custom" placeholder="Kullanıcı adınız" autocomplete="off" />
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Şifre</label>
+                <div class="input-wrapper">
+                    <input type="password" asp-for="Password" class="form-control-custom" placeholder="Şifreniz" />
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+
+            <button type="submit" class="btn-login">
+                Giriş Yap <i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 6px;"></i>
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

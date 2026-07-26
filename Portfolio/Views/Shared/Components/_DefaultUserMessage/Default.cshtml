@@ -1,0 +1,61 @@
+﻿@model UserMessage
+@*
+    Default user message
+*@
+<div class="glass-card p-stack-lg rounded-xl">
+    
+    <form id="messageForm" method="post" asp-controller="Default" asp-action="SendMessage" class="flex flex-col gap-stack-md">
+        <div>
+            <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="Adınız Soyadınız">Name</label>
+            <input required asp-for="Name" class="w-full bg-surface-variant/50 border border-outline-variant rounded-md px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"  placeholder="John Doe" type="text" />
+        </div>
+        <div>
+            <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="email ">Email Adresiniz</label>
+            <input required asp-for="Email" class="w-full bg-surface-variant/50 border border-outline-variant rounded-md px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"  placeholder="john@ornek.com" type="email" />
+        </div>
+        <div>
+            <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="message">Mesajınız</label>
+            <textarea required asp-for="MessageBody" class="w-full bg-surface-variant/50 border border-outline-variant rounded-md px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all min-h-[150px]"  placeholder="Mesaj içeriğinizi bu kısma yazınız..."></textarea>
+        </div>
+        <button class="w-full px-8 py-4 bg-primary text-on-primary rounded-DEFAULT font-label-sm text-label-sm hover:opacity-90 transition-opacity mt-2" type="submit" onclick ="SendMessage()">Mesajı Gönder</button>
+    </form>
+</div>
+
+<script>
+
+
+
+
+  function SendMessage() {
+    var form = document.getElementById("messageForm");
+
+    // 1. Form geçerli değilse hata uyarısı ver ve fonksiyonu durdur
+    if (!form.checkValidity())
+    {
+        form.reportValidity(); // Eksik/hatalı input'u tarayıcıda vurgular
+        Swal.fire({
+            title: "Hata!",
+            text: "Lütfen formdaki gerekli alanları doğru şekilde doldurun.",
+            icon: "warning",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Tamam"
+        });
+        return; // Kodun aşağıya devam etmesini engeller
+    }
+
+    // 2. Form geçerli ise başarı uyarısını göster ve yönlendir
+    Swal.fire({
+        title: "Mesajınız gönderildi!",
+        text: "Size en kısa sürede dönüş yapılacaktır.",
+        icon: "success",
+        showCancelButton: false,
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Tamam"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/Default/Index";
+        }
+    });
+}
+
+</script>
