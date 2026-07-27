@@ -1,0 +1,49 @@
+﻿@model Experience
+
+@{
+    ViewData["Title"] = "";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="w-full">
+    <div class="mb-6">
+        <h1 class="text-h2 font-bold text-on-surface">Deneyim Güncelle</h1>
+        <p class="text-gray-500 text-sm">Kariyer geçmişinize yeni bir tecrübe ekleyin.</p>
+    </div>
+
+    <!-- Form Kartı -->
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 w-full">
+        <form method="post" action="/Experience/UpdateExperience" class="flex flex-col gap-4 w-full">
+            <input type="hidden" asp-for="Id" />
+            <div>
+                <label class="block font-medium text-gray-700 mb-1">Pozisyon / Unvan</label>
+                <input type="text" asp-for="Title" required class="w-full p-2.5 rounded border border-gray-300 focus:outline-none focus:border-blue-500 text-gray-800" placeholder="Örn: Web Developer" />
+            </div>
+
+            <div>
+                <label class="block font-medium text-gray-700 mb-1">Şirket / Firma Adı</label>
+                <input type="text" asp-for="Company" required class="w-full p-2.5 rounded border border-gray-300 focus:outline-none focus:border-blue-500 text-gray-800" placeholder="Örn: Jolly Joker" />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Başlangıç Dönemi</label>
+                    <input type="text" asp-for="StartYear" required class="w-full p-2.5 rounded border border-gray-300 focus:outline-none focus:border-blue-500 text-gray-800" placeholder="Örn: 2024" />
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Bitiş Dönemi</label>
+                    <input type="text" asp-for="EndYear" required class="w-full p-2.5 rounded border border-gray-300 focus:outline-none focus:border-blue-500 text-gray-800" placeholder="Örn: 2025 veya Devam Ediyor" />
+                </div>
+            </div>
+
+            <div>
+                <label class="block font-medium text-gray-700 mb-1">Açıklama</label>
+                <textarea asp-for="Description" rows="4" class="w-full p-2.5 rounded border border-gray-300 focus:outline-none focus:border-blue-500 text-gray-800" placeholder="Yaptığınız işlerden kısaca bahsedin..."></textarea>
+            </div>
+
+            <div class="flex gap-3 justify-end mt-4">
+                <a href="/Experience/Index" class="px-4 py-2 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">İptal</a>
+                <button type="submit" class="px-4 py-2 rounded bg-blue-600 text-white font-medium hover:bg-blue-700">Güncelle</button>
+            </div>
+        </form>
+    </div>
+</div>

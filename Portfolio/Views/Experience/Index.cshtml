@@ -1,7 +1,7 @@
 ﻿@model List<Experience>  
 
 @{
-    ViewData["Title"] = "Deneyimlerim";
+    ViewData["Title"] = "";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 <div class="p-lg">
@@ -11,7 +11,7 @@
             <h1 class="text-h2 font-bold text-on-surface">Deneyimlerim</h1>
             <p class="text-on-surface-variant font-label-md">Kariyer geçmişinizi ve tecrübelerinizi bu alandan yönetebilirsiniz.</p>
         </div>
-        <a href="/Experience/Create" class="btn btn-primary px-md py-sm rounded-md bg-primary text-on-primary hover:opacity-90 font-semibold">
+        <a href="/Experience/CreateExperience" class="btn btn-primary px-md py-sm rounded-md bg-primary text-on-primary hover:opacity-90 font-semibold">
             + Yeni Deneyim Ekle
         </a>
     </div>
@@ -47,8 +47,8 @@
                             </td>
                             <td class="p-md text-on-surface-variant max-w-xs truncate">@item.Description</td>
                             <td class="p-md text-right">
-                                <a href="/Experience/Update/@item.Id" class="text-primary font-semibold hover:underline me-md">Düzenle</a>
-                                <a href="/Experience/Delete/@item.Id" class="text-error font-semibold hover:underline" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?');">Sil</a>
+                                <a href="/Experience/UpdateExperience/@item.Id" class="text-primary font-semibold hover:underline me-md">Güncelle</a>
+                                <a href="/Experience/DeleteExperience/@item.Id" class="text-error font-semibold hover:underline" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?');">Sil</a>
                             </td>
                         </tr>
                     }

@@ -1,5 +1,6 @@
 ﻿using AspNetCoreGeneratedDocument;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Portfolio.Data.Context;
 
 namespace Portfolio.ViewComponents.Default_Index
@@ -12,9 +13,11 @@ namespace Portfolio.ViewComponents.Default_Index
         {
             _context = context;
         }
-            public IViewComponentResult Invoke()
+            public async Task<IViewComponentResult> InvokeAsync()
         {
-            var about = _context.Abouts.ToList();
+            var about = await _context.Abouts
+                .Include(a => a.Skills)
+                .ToListAsync();
 
             return View(about);
         }

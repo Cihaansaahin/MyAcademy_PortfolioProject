@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Alex Dev | Portfolio</title>
+    <title>Cihan Dev | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -190,15 +190,15 @@
     <!-- TopNavBar -->
     <nav class="bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-outline-variant/10 fixed top-0 w-full z-50">
         <div class="flex justify-between items-center max-w-[1200px] mx-auto px-gutter h-20">
-            <a class="font-headline-md text-headline-md font-extrabold tracking-tighter text-on-background dark:text-on-background cursor-pointer active:scale-95" href="#">ALEX.DEV</a>
+            <a class="font-headline-md text-headline-md font-extrabold tracking-tighter text-on-background dark:text-on-background cursor-pointer active:scale-95" href="#">CİHAN.DEV</a>
             <div class="hidden md:flex items-center gap-stack-lg">
-                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#about">About</a>
-                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#services">Services</a>
-                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#portfolio">Portfolio</a>
-                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#experience">Experience</a>
-                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#contact">Contact</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#about">Hakkımda</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#services">Hizmetlerim</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#portfolio">Projelerim</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#experience">Deneyimlerim</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#contact">İletişim</a>
             </div>
-            <a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-DEFAULT font-label-sm text-label-sm hover:opacity-90 transition-opacity cursor-pointer active:scale-95" href="#contact">Let's Talk</a>
+            <a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-DEFAULT font-label-sm text-label-sm hover:opacity-90 transition-opacity cursor-pointer active:scale-95" href="#contact">Hadi Konuşalım</a>
             <!-- Mobile Menu Button -->
             <button class="md:hidden text-on-background">
                 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
@@ -214,8 +214,8 @@
                     <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background">Building Digital Experiences with <span class="text-gradient">Precision</span></h1>
                     <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">I engineer elegant, high-performance web applications, merging technical rigor with minimalist design to solve complex business problems.</p>
                     <div class="flex items-center gap-stack-md mt-stack-md">
-                        <a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded-DEFAULT font-label-sm text-label-sm hover:opacity-90 transition-opacity" href="#portfolio">View My Work</a>
-                        <a class="inline-flex items-center justify-center px-8 py-4 border border-outline text-on-background rounded-DEFAULT font-label-sm text-label-sm hover:bg-surface-variant/30 transition-colors" href="#contact">Contact Me</a>
+                        <a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded-DEFAULT font-label-sm text-label-sm hover:opacity-90 transition-opacity" href="#portfolio">Çalışmalarıma göz atalım</a>
+                        <a class="inline-flex items-center justify-center px-8 py-4 border border-outline text-on-background rounded-DEFAULT font-label-sm text-label-sm hover:bg-surface-variant/30 transition-colors" href="#contact">Benimle iletişime geç</a>
                     </div>
                 </div>
                 <div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square rounded-xl overflow-hidden glass-card">
@@ -225,34 +225,16 @@
         </section>
         <!-- About Section -->
         @await Component.InvokeAsync("_DefaultAbout")
-        <!-- Experience & Education Section -->
+        <!-- Experience  Education Section -->
         <section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter relative" id="experience">
             <div class="max-w-container-max mx-auto">
                 <div class="text-center mb-stack-lg">
-                    <h2 class="font-headline-md text-headline-md text-on-background">Resume</h2>
-                    <p class="font-body-md text-body-md text-on-surface-variant mt-2">My professional journey and academic background.</p>
+                    <h2 class="font-headline-md text-headline-md text-on-background">Geçmiş</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-2">İş Ve Akademik Geçmişim.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
                     <!-- Experience -->
-                    <div>
-                        <h3 class="font-body-lg text-body-lg font-semibold text-on-background mb-stack-md flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">work</span> Experience
-                        </h3>
-                        <div class="relative border-l border-outline-variant/30 pl-6 ml-3 space-y-stack-lg">
-                            <div class="relative">
-                                <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-background"></span>
-                                <h4 class="font-body-lg text-body-lg text-on-background font-semibold">Senior Frontend Engineer</h4>
-                                <p class="font-label-sm text-label-sm text-primary mb-2">TechNova Inc. | 2021 - Present</p>
-                                <p class="font-body-md text-body-md text-on-surface-variant">Lead the development of core web applications, improving load times by 40% and mentoring junior developers.</p>
-                            </div>
-                            <div class="relative">
-                                <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface-variant ring-4 ring-background"></span>
-                                <h4 class="font-body-lg text-body-lg text-on-background font-semibold">Full Stack Developer</h4>
-                                <p class="font-label-sm text-label-sm text-primary mb-2">Digital Dynamics | 2018 - 2021</p>
-                                <p class="font-body-md text-body-md text-on-surface-variant">Developed robust e-commerce platforms using the MERN stack, integrating complex payment gateways.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("_DefaultExperience")
                     <!-- Education -->
                     <div>
                         <h3 class="font-body-lg text-body-lg font-semibold text-on-background mb-stack-md flex items-center gap-2">
@@ -265,17 +247,13 @@
                                 <p class="font-label-sm text-label-sm text-primary mb-2">Stanford University | 2016 - 2018</p>
                                 <p class="font-body-md text-body-md text-on-surface-variant">Specialized in Human-Computer Interaction and Advanced Web Technologies.</p>
                             </div>
-                            <div class="relative">
-                                <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface-variant ring-4 ring-background"></span>
-                                <h4 class="font-body-lg text-body-lg text-on-background font-semibold">B.S. Software Engineering</h4>
-                                <p class="font-label-sm text-label-sm text-primary mb-2">MIT | 2012 - 2016</p>
-                                <p class="font-body-md text-body-md text-on-surface-variant">Graduated with honors. Minor in Graphic Design.</p>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+       
         <!-- Services Section -->
         <section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter relative bg-surface-container-lowest" id="services">
             <div class="max-w-container-max mx-auto">
@@ -447,10 +425,10 @@
         <!-- Footer -->
         <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/10 w-full py-section-padding-mobile md:py-section-padding-desktop">
             <div class="max-w-[1200px] mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md">
-                <span class="font-headline-md text-headline-md text-on-surface">ALEX.DEV</span>
-                <p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Alex Dev. Built with Precision.</p>
+                <span class="font-headline-md text-headline-md text-on-surface">CİHAN.DEV</span>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">© 2024  Dev. Built with Precision.</p>
                 <div class="flex gap-stack-md">
-                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="https://www.linkedin.com/in/cihaansaahinn/" target="_blank">LinkedIn</a>
                     <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">GitHub</a>
                     <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Dribbble</a>
                     <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Twitter</a>
