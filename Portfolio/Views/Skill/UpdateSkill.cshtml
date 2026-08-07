@@ -1,0 +1,45 @@
+﻿@model Skill
+@{
+     ViewData["Title"] = "Yetenek Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="container-fluid p-3">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white py-3">
+            <h5 class="fw-bold mb-0 text-dark">Yetenek Güncelle</h5>
+        </div>
+        <div class="card-body p-4">
+            <form method="post" asp-action="UpdateSkill" asp-controller="Skill">
+                
+                <!-- Veri Kaybını Önleyen Hidden Inputlar -->
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="AboutId" />
+
+                <!-- Yetenek Adı -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-dark">Yetenek Adı</label>
+                    <input type="text" class="form-control" asp-for="Name" required />
+                </div>
+
+                <!-- Durum (Checkbox) -->
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" asp-for="IsActive" id="isActiveCheck" />
+                    <label class="form-check-label fw-semibold text-dark" for="isActiveCheck">
+                        Durum (Aktif mi?)
+                    </label>
+                </div>
+
+                <!-- Butonlar -->
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary px-4 fw-semibold">
+                        <i class="fa-solid fa-floppy-disk me-1"></i> Güncelle
+                    </button>
+                    <a href="/Skill/Index" class="btn btn-secondary px-4 fw-semibold">
+                        İptal
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

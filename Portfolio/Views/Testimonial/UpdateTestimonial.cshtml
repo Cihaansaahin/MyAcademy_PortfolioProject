@@ -1,0 +1,52 @@
+﻿@model Testimonial
+@{
+    ViewData["Title"] = "Müşteri Yorumu Düzenle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="container-fluid mt-4" style="max-width: 700px;">
+    <h4 class="mb-3">Müşteri Yorumu Düzenle</h4>
+
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label class="form-label">Yıldız (1-5)</label>
+            <input type="number" min="1" max="5" class="form-control" asp-for="Rating" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Yorum</label>
+            <textarea asp-for="Comment" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Adı</label>
+                <input type="text" asp-for="FirstName" class="form-control" required />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Soyadı</label>
+                <input type="text" asp-for="LastName" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Baş Harfler</label>
+                <input type="text" asp-for="Initials" class="form-control" required />
+            </div>
+            <div class="col-md-8 mb-3">
+                <label class="form-label">Başlık</label>
+                <input type="text" asp-for="Title" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="d-flex gap-2 mt-2">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-floppy-disk me-1"></i> Güncelle
+            </button>
+            <a href="/Testimonial/Index" class="btn btn-secondary">İptal</a>
+        </div>
+    </form>
+</div>

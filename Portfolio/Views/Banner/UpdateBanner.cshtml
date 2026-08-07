@@ -1,0 +1,31 @@
+﻿@model Banner
+@{
+    ViewData["Title"] = "Banner Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post" class="glass-card" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 25px;">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group" style="margin-bottom: 20px;">
+        <label class="form-label" style="display: block; margin-bottom: 8px; font-weight: 600;">Görsel URL</label>
+        <input type="text" class="form-input" asp-for="ImageUrl" placeholder="https://..." required style="width: 100%; box-sizing: border-box;" />
+    </div>
+
+    <div class="form-group" style="margin-bottom: 20px;">
+        <label class="form-label" style="display: block; margin-bottom: 8px; font-weight: 600;">Başlık</label>
+        <input type="text" class="form-input" asp-for="Title" required style="width: 100%; box-sizing: border-box;" />
+    </div>
+
+  
+    <div class="form-group" style="margin-bottom: 25px;">
+        <label class="form-label" style="display: block; margin-bottom: 8px; font-weight: 600;">Açıklama</label>
+        <textarea asp-for="Description" class="form-input" rows="8" required style="width: 100%; min-height: 180px; resize: vertical; box-sizing: border-box; line-height: 1.5; padding: 12px;"></textarea>
+    </div>
+
+    <div class="form-actions" style="margin-top: 15px;">
+        <button type="submit" class="btn btn-primary" style="padding: 10px 25px; cursor: pointer;">
+            <i class="fa-solid fa-floppy-disk"></i> Güncelle
+        </button>
+    </div>
+</form>

@@ -1,0 +1,70 @@
+﻿@model Education
+@{
+    ViewData["Title"] = "Eğitimi Düzenle ";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="p-4">
+    
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h4 class="fw-bold text-dark mb-0">Eğitim Bilgisi Güncelle</h4>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-sm px-3">
+            <span class="material-symbols-outlined fs-6 align-middle me-1">arrow_back</span>Listeye Dön
+        </a>
+    </div>
+
+    
+    <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-body p-4">
+            <form asp-action="UpdateEducation" method="post">
+                
+               
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row g-3">
+                  
+                    <div class="col-md-6">
+                        <label asp-for="SchoolName" class="form-label text-secondary fw-semibold small">OKUL / ÜNİVERSİTE</label>
+                        <input asp-for="SchoolName" class="form-control py-2" placeholder="Örn: Üniversite Adı" required />
+                    </div>
+
+                 
+                    <div class="col-md-6">
+                        <label asp-for="Department" class="form-label text-secondary fw-semibold small">BÖLÜM</label>
+                        <input asp-for="Department" class="form-control py-2" placeholder="Örn: Yazılım Mühendisliği" required />
+                    </div>
+
+                   
+                    <div class="col-md-4">
+                        <label asp-for="GPA" class="form-label text-secondary fw-semibold small">GPA (NOT ORTALAMASI)</label>
+                        <input asp-for="GPA" type="number" step="0.01" class="form-control py-2" placeholder="3.00" />
+                    </div>
+
+               
+                    <div class="col-md-4">
+                        <label asp-for="StartYear" class="form-label text-secondary fw-semibold small">BAŞLANGIÇ YILI</label>
+                        <input asp-for="StartYear" type="number" class="form-control py-2" placeholder="2021" required />
+                    </div>
+
+                  
+                    <div class="col-md-4">
+                        <label asp-for="GraduationYear" class="form-label text-secondary fw-semibold small">MEZUNİYET YILI</label>
+                        <input asp-for="GraduationYear" type="number" class="form-control py-2" placeholder="2025" required />
+                    </div>
+
+                    
+                    <div class="col-12">
+                        <label asp-for="Description" class="form-label text-secondary fw-semibold small">AÇIKLAMA</label>
+                        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Eğitim detayları, kazanımlar..."></textarea>
+                    </div>
+
+                  
+                    <div class="col-12 pt-3 border-top mt-4 d-flex justify-content-end gap-2">
+                        <a asp-controller="Education" asp-action="Index" class="btn btn-light border px-4">İptal</a>
+                        <button type="submit" class="btn btn-primary px-4 fw-semibold">Güncelle</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

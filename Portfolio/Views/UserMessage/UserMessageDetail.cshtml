@@ -1,0 +1,44 @@
+﻿@model UserMessage
+
+@{
+    ViewData["Title"] = "Mesaj Detayı";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="container-fluid p-3">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white py-3">
+            <h5 class="fw-bold mb-0 text-dark">Mesaj Detayı</h5>
+        </div>
+        <div class="card-body p-4">
+            <form method="post">
+                <input type="hidden" asp-for="Id" />
+
+                
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-dark">Adı</label>
+                    <input type="text" class="form-control" asp-for="Name" readonly />
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-dark">Eposta</label>
+                    <input type="email" class="form-control" asp-for="Email" readonly />
+                </div>
+
+               
+                <div class="mb-4">
+                    <label class="form-label fw-semibold text-dark">Mesaj İçeriği</label>
+                    <textarea asp-for="MessageBody" class="form-control" rows="6" readonly></textarea>
+                </div>
+
+                
+                <div class="d-flex gap-2">
+                    <a href="/UserMessage/Index" class="btn btn-primary px-4 fw-semibold">
+                        Mesajlara Dön
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

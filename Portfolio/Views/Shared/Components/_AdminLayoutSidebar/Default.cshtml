@@ -13,9 +13,16 @@
             <span class="material-symbols-outlined">dashboard</span>
             <span class="font-label-md text-label-md">Dashboard</span>
         </a>
+
+        <!-- Banner / Karşılama -->
+        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/Banner/Index">
+            <span class="material-symbols-outlined">view_carousel</span>
+            <span class="font-label-md text-label-md">Banner</span>
+        </a>
+
         <!-- Projects (Active) -->
-        <a class="relative flex items-center gap-md px-md py-sm text-primary bg-surface-container-low border-l-4 border-primary cursor-pointer active:opacity-80" href="/Project/Index">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/Project/Index">
+            <span class="material-symbols-outlined" >folder_open</span>
             <span class="font-label-md text-label-md font-semibold">Projelerim</span>
         </a>
         <!-- Categories -->
@@ -23,17 +30,7 @@
             <span class="material-symbols-outlined">category</span>
             <span class="font-label-md text-label-md">Hakkımızda</span>
         </a>
-        <!-- Messages -->
-        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
-            <span class="material-symbols-outlined">mail</span>
-            <span class="font-label-md text-label-md">Gelen Mesajlar</span>
-        </a>
-        <!-- Settings -->
-        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
-            <span class="material-symbols-outlined">settings</span>
-            <span class="font-label-md text-label-md">Yeteneklerim</span>
-        </a>
-
+      
         <!-- Deneyimlerim -->
         <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/Experience/Index">
             <span class="material-symbols-outlined">work</span>
@@ -52,28 +49,39 @@
             <span class="font-label-md text-label-md">Hizmetlerim</span>
         </a>
 
-        <!-- Banner / Karşılama -->
-        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/Banner/Index">
-            <span class="material-symbols-outlined">view_carousel</span>
-            <span class="font-label-md text-label-md">Banner</span>
-        </a>
-
         <!-- Teknolojiler (TechStack) -->
         <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/ProjectTechStacks/Index">
             <span class="material-symbols-outlined">layers</span>
             <span class="font-label-md text-label-md">Teknolojiler</span>
         </a>
 
-        <!-- Referanslar / Yorumlar -->
+        <!-- Messages -->
+        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/UserMessage/Index">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="font-label-md text-label-md">Gelen Mesajlar</span>
+        </a>
+
+       
+        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/Skill/Index">
+            <span class="material-symbols-outlined">star</span>
+            <span class="font-label-md text-label-md">Yetenekler</span>
+        </a>
+
         <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/Testimonial/Index">
-            <span class="material-symbols-outlined">rate_review</span>
-            <span class="font-label-md text-label-md">Referanslar</span>
+            <span class="material-symbols-outlined">chat_bubble</span>
+            <span class="font-label-md text-label-md">Bahsetmeler</span>
         </a>
 
         <!-- İletişim Bilgileri -->
         <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/ContactInfo/Index">
             <span class="material-symbols-outlined">call</span>
             <span class="font-label-md text-label-md">İletişim Bilgileri</span>
+        </a>
+
+        
+        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="/Auth/Logout">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="font-label-md text-label-md">Çıkış Yap </span>
         </a>
     </nav>
     <div class="mt-auto px-md flex items-center gap-md pt-lg border-t border-outline-variant">
@@ -82,8 +90,6 @@
             <p class="font-label-md text-label-md font-bold text-on-surface">@ViewBag.fullName</p>
             <p class="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Admin</p>
         </div>
-        <div>
-            <a href="/Auth/Logout"><i class="fa fa-logout"></i>Çıkış Yap</a>
-        </div>
+  
     </div>
 </aside>

@@ -1,0 +1,63 @@
+﻿@model List<Education>
+@{
+    ViewData["Title"] = "Eğitimlerim";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="container my-4">
+   
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+        <h3 class="font-body-lg text-body-lg font-semibold text-on-background flex items-center gap-2 m-0">
+            <span class="material-symbols-outlined text-primary">school</span> Eğitimlerim
+        </h3>
+        <a asp-action="CreateEducation" class="btn btn-primary btn-sm d-inline-flex align-items-center gap-1 shadow-sm">
+            <span class="material-symbols-outlined style-icon fs-6">add</span> Yeni Eğitim Ekle
+        </a>
+    </div>
+
+  
+    <div class="relative border-l border-outline-variant/30 pl-6 ml-3 space-y-stack-lg">
+        @foreach (var item in Model)
+        {
+            <div class="relative mb-5 group">
+
+              
+                <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-background"></span>
+
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                    <div>
+                       
+                        <h4 class="font-body-lg text-body-lg text-on-background font-semibold m-0">
+                            @item.SchoolName - <span class="text-muted fs-6 font-normal">@item.Department</span>
+                        </h4>
+
+                    
+                        <p class="font-label-sm text-label-sm text-primary my-1">
+                            @item.StartYear - @item.GraduationYear
+                            @if (item.GPA != null)
+                            {
+                                <span class="ms-2 badge bg-light text-dark border font-normal">GPA: @item.GPA</span>
+                            }
+                        </p>
+
+                       
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-2 mb-0">
+                            @item.Description
+                        </p>
+                    </div>
+
+                   
+                    <div class="d-flex gap-2 align-items-center">
+                        <a href="/Education/UpdateEducation/@item.Id" class="btn btn-outline-warning btn-sm d-inline-flex align-items-center gap-1" title="Düzenle">
+                            <span class="material-symbols-outlined fs-6">edit</span> Düzenle
+                        </a>
+                        <a href="/Education/DeleteEducation/@item.Id" class="btn btn-outline-danger btn-sm d-inline-flex align-items-center gap-1" onclick="return confirm('Bu eğitimi silmek istediğinize emin misiniz?');" title="Sil">
+                            <span class="material-symbols-outlined fs-6">delete</span> Sil
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
