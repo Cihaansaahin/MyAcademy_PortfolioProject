@@ -1,0 +1,129 @@
+﻿@model List<Project> // TODO: Project entity namespace'inizi kontrol edin
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="mb-4">
+    <h4 class="fw-bold text-dark m-0">Genel Bakış</h4>
+    <p class="text-muted small">Sistem özet istatistikleri ve son projeleriniz.</p>
+</div>
+
+<!-- İstatistik Kartları -->
+<div class="row g-3 mb-4">
+    <div class="col-12 col-sm-6 col-md-4 col-xl-2.4">
+        <div class="card border-0 shadow-sm p-3 bg-white rounded-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small d-block">Toplam Mesaj</span>
+                    <span class="fw-bold fs-4 text-dark">@ViewBag.TotalMessages</span>
+                </div>
+                <div class="bg-primary-subtle text-primary p-3 rounded-circle">
+                    <i class="fa-solid fa-envelope fs-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-xl-2.4">
+        <div class="card border-0 shadow-sm p-3 bg-white rounded-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small d-block">Okunmamış</span>
+                    <span class="fw-bold fs-4 text-danger">@ViewBag.UnreadMessages</span>
+                </div>
+                <div class="bg-danger-subtle text-danger p-3 rounded-circle">
+                    <i class="fa-solid fa-envelope-open fs-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-xl-2.4">
+        <div class="card border-0 shadow-sm p-3 bg-white rounded-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small d-block">Projeler</span>
+                    <span class="fw-bold fs-4 text-dark">@ViewBag.TotalProjects</span>
+                </div>
+                <div class="bg-success-subtle text-success p-3 rounded-circle">
+                    <i class="fa-solid fa-diagram-project fs-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-xl-2.4">
+        <div class="card border-0 shadow-sm p-3 bg-white rounded-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small d-block">Deneyimler</span>
+                    <span class="fw-bold fs-4 text-dark">@ViewBag.TotalExperiences</span>
+                </div>
+                <div class="bg-info-subtle text-info p-3 rounded-circle">
+                    <i class="fa-solid fa-briefcase fs-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-xl-2.4">
+        <div class="card border-0 shadow-sm p-3 bg-white rounded-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small d-block">Yetenekler</span>
+                    <span class="fw-bold fs-4 text-dark">@ViewBag.TotalSkills</span>
+                </div>
+                <div class="bg-warning-subtle text-warning p-3 rounded-circle">
+                    <i class="fa-solid fa-code fs-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Son Eklenen Projeler Tablosu -->
+<div class="card border-0 shadow-sm rounded-3">
+    <div class="card-body p-4">
+        <h6 class="fw-bold text-dark mb-3">Son Eklenen Projeler</h6>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Proje Adı</th>
+                        <th>Açıklama</th>
+                        <th class="text-end">İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td class="fw-semibold">@item.Name</td>
+                                <td class="text-muted small">
+                                    @(item.Description?.Length > 50 ? item.Description.Substring(0, 50) + "..." : item.Description)
+                                </td>
+                                <td class="text-end">
+                                    <a asp-controller="Project" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-light border">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center text-muted py-3">Henüz proje eklenmemiş.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
