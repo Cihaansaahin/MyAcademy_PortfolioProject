@@ -8,7 +8,7 @@
 
 ### Ön Yüz (Frontend) Görünümleri
 <p align="center">
-  <img width="48%" alt="Ana Sayfa" src="https://github.com/user-attachments/assets/81aaaece-25be-4e99-baac-7f87f0bb4caf" />
+  <img width="48%" alt="Ana Sayfa" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/Banner.png" />
   <img width="48%" alt="Hakkımda" src="https://github.com/user-attachments/assets/02294af8-707a-4ded-9896-205613acacf0" />
 </p>
 <p align="center">
