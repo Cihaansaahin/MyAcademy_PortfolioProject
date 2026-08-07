@@ -9,24 +9,25 @@
 ### Ön Yüz (Frontend) Görünümleri
 <p align="center">
   <img width="48%" alt="Ana Sayfa" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/Banner.png" />
-  <img width="48%" alt="Hakkımda" src="https://github.com/user-attachments/assets/02294af8-707a-4ded-9896-205613acacf0" />
+  <img width="48%" alt="Hakkımda" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/About.png" />
 </p>
 <p align="center">
-  <img width="48%" alt="Deneyimlerim" src="https://github.com/user-attachments/assets/b8e8a5bf-7780-41a4-b50a-340716a1b6c5" />
-  <img width="48%" alt="Yeteneklerim" src="https://github.com/user-attachments/assets/445b14dc-e743-4613-8d0a-505f4972f664" />
+  <img width="48%" alt="Deneyimlerim" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/Deneyimeğitim.png" />
 </p>
 <p align="center">
-  <img width="48%" alt="Projelerim" src="https://github.com/user-attachments/assets/9930eeef-25a1-4458-9924-ef20c189fae6" />
-  <img width="48%" alt="Yorumlar" src="https://github.com/user-attachments/assets/586a33a5-9e9d-4597-b8fa-17fa03f9045b" />
+  <img width="48%" alt="Projelerim" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/Projeler.png" />
+  <img width="48%" alt="Yorumlar" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/Yorumlar.png" />
+" />
 </p>
 <p align="center">
-  <img width="48%" alt="İletişim" src="https://github.com/user-attachments/assets/8fd1ade1-5706-4cc9-a6b4-9fce5034caa3" />
+  <img width="48%" alt="İletişim" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/iletişim.png" />
 </p>
 
 ### Yönetim (Admin) Paneli
 <p align="center">
-  <img width="48%" alt="Admin Giriş" src="https://github.com/user-attachments/assets/483f721a-e4a2-4137-b598-236dc6beff7f" />
-  <img width="48%" alt="Admin Dashboard" src="https://github.com/user-attachments/assets/f8d7bf41-182f-4f57-80ff-fb698973d85d" />
+  <img width="48%" alt="Admin Giriş" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/AdminGiris.png" />
+  <img width="48%" alt="Admin Dashboard" src="https://github.com/Cihaansaahin/MyAcademy_PortfolioProject/blob/master/Portfolio/Images/Dashbord.png" />
+" />
 </p>
 
 ---
